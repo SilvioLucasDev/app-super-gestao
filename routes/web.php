@@ -4,8 +4,6 @@ use App\Http\Controllers\ContatoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PrincipalController;
 use App\Http\Controllers\SobreNosController;
-use App\Http\Controllers\TesteController;
-
 
 /*
 |--------------------------------------------------------------------------
