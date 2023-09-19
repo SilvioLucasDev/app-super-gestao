@@ -4,6 +4,8 @@ use App\Http\Controllers\ContatoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PrincipalController;
 use App\Http\Controllers\SobreNosController;
+use App\Http\Controllers\TesteController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +18,7 @@ use App\Http\Controllers\SobreNosController;
 |
 */
 
-Route::get('/', [PrincipalController::class, 'principal']);
-Route::get('/sobre-nos', [SobreNosController::class, 'sobreNos']);
-Route::get('/contato', [ContatoController::class, 'contato']);
+Route::get('/', [PrincipalController::class, 'principal'])->name('site.index');
+Route::get('/sobre-nos', [SobreNosController::class, 'sobreNos'])->name('site.sobre-nos');
+Route::get('/contato', [ContatoController::class, 'contato'])->name('site.contato');
+Route::get('/login', function () { return 'Login'; })->name('site.login');
