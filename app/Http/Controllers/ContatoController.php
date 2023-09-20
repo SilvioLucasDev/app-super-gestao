@@ -25,12 +25,11 @@ class ContatoController extends Controller
             'mensagem' => 'required|max:2000'
         ];
         $feedback = [
-            'nome.min' => 'O campo nome precisa ter no mínimo 3 caracteres',
-            'nome.max' => 'O campo nome deve ter no máximo 40 caracteres',
-            'nome.unique' => 'O nome informado já está em uso',
-            'email.email' => 'O e-mail informado não é válido',
-            'mensagem.max' => 'A mensagem deve ter no máximo 200 caracteres',
-            'required' => 'O campo :attribute deve ser preenchido'
+            'unique' => 'O :attribute informado já está em uso',
+            'required' => 'O campo :attribute deve ser preenchido',
+            'min' => 'O campo :attribute precisa ter no mínimo :min caracteres',
+            'max' => 'O campo :attribute deve ter no máximo :max caracteres',
+            'email' => 'O :attribute informado não é válido'
         ];
         $request->validate($regras, $feedback);
         SiteContato::create($request->all());
