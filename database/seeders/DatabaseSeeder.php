@@ -13,9 +13,9 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $this->call([
+            MotivoContatoSeeder::class,
             FornecedorSeeder::class,
             SiteContatoSeeder::class,
-            MotivoContatoSeeder::class,
         ]);
     }
 }

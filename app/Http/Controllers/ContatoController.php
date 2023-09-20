@@ -21,7 +21,7 @@ class ContatoController extends Controller
             'nome' => 'required|min:3|max:40|unique:site_contatos',
             'telefone' => 'required',
             'email' => 'email',
-            'motivo_contato' => 'required',
+            'motivo_contatos_id' => 'required',
             'mensagem' => 'required|max:2000'
         ];
         $feedback = [
@@ -33,6 +33,7 @@ class ContatoController extends Controller
             'required' => 'O campo :attribute deve ser preenchido'
         ];
         $request->validate($regras, $feedback);
-        //SiteContato::create($request->all());
+        SiteContato::create($request->all());
+        return redirect()->route('site.index');
     }
 }
