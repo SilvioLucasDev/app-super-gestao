@@ -17,6 +17,8 @@ class DatabaseSeeder extends Seeder
             FornecedorSeeder::class,
             SiteContatoSeeder::class,
             UserSeeder::class,
+            UnidadeSeeder::class,
+            ProdutoSeeder::class,
         ]);
     }
 }
