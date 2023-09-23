@@ -16,8 +16,7 @@ class ProdutoController extends Controller
     {
         $request = $request->all();
         $produtos = Produto::with(['produtoDetalhe', 'fornecedor'])->paginate(10);
-        $titulo = 'Produto';
-        return view('app.produto.index', compact('titulo', 'produtos', 'request'));
+        return view('app.produto.index', compact('produtos', 'request'));
     }
 
     /**
@@ -27,8 +26,7 @@ class ProdutoController extends Controller
     {
         $unidades = Unidade::all();
         $fornecedores = Fornecedor::all();
-        $titulo = 'Produto';
-        return view('app.produto.create', compact('titulo', 'unidades', 'fornecedores'));
+        return view('app.produto.create', compact('unidades', 'fornecedores'));
     }
 
     /**
@@ -61,8 +59,7 @@ class ProdutoController extends Controller
      */
     public function show(Produto $produto)
     {
-        $titulo = 'Produto';
-        return view('app.produto.show', compact('titulo', 'produto'));
+        return view('app.produto.show', compact('produto'));
     }
 
     /**
@@ -72,8 +69,7 @@ class ProdutoController extends Controller
     {
         $unidades = Unidade::all();
         $fornecedores = Fornecedor::all();
-        $titulo = 'Produto';
-        return view('app.produto.edit', compact('titulo', 'produto', 'unidades', 'fornecedores'));
+        return view('app.produto.edit', compact('produto', 'unidades', 'fornecedores'));
     }
 
     /**

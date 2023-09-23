@@ -50,7 +50,7 @@ class PedidoProdutoController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(PedidoProduto $pedidoProduto)
+    public function show(PedidoProduto $pedido_produto)
     {
         //
     }
@@ -58,7 +58,7 @@ class PedidoProdutoController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(PedidoProduto $pedidoProduto)
+    public function edit(PedidoProduto $pedido_produto)
     {
         //
     }
@@ -66,7 +66,7 @@ class PedidoProdutoController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, PedidoProduto $pedidoProduto)
+    public function update(Request $request, PedidoProduto $pedido_produto)
     {
         //
     }
@@ -74,9 +74,9 @@ class PedidoProdutoController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(PedidoProduto $pedidoProduto)
+    public function destroy(PedidoProduto $pedido_produto)
     {
-        $pedidoProduto->delete();
-        return redirect()->route('pedido-produto.create', $pedidoProduto->pedido_id);
+        $pedido_produto->delete();
+        return redirect()->route('pedido-produto.create', $pedido_produto->pedido_id);
     }
 }

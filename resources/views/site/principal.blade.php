@@ -1,6 +1,6 @@
 @extends('site.layouts.basico')
 
-@section('titulo', $titulo)
+@section('titulo', 'Home')
 @section('conteudo')
     <div class="conteudo-destaque">
         <div class="esquerda">

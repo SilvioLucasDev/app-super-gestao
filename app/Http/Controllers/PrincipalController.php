@@ -10,7 +10,6 @@ class PrincipalController extends Controller
     public function principal()
     {
         $motivo_contatos = MotivoContato::all();
-        $titulo = 'Home';
-        return view('site.principal', compact('titulo', 'motivo_contatos'));
+        return view('site.principal', compact('motivo_contatos'));
     }
 }

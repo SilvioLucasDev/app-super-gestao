@@ -22,8 +22,7 @@ class ProdutoDetalheController extends Controller
     public function create()
     {
         $unidades = Unidade::all();
-        $titulo = 'Detalhes do Produto';
-        return view('app.produto-detalhe.create', compact('titulo', 'unidades'));
+        return view('app.produto-detalhe.create', compact('unidades'));
     }
 
     /**
@@ -63,8 +62,7 @@ class ProdutoDetalheController extends Controller
     public function edit(ProdutoDetalhe $produto_detalhe)
     {
         $unidades = Unidade::all();
-        $titulo = 'Detalhes do Produto';
-        return view('app.produto-detalhe.edit', compact('titulo', 'produto_detalhe', 'unidades'));
+        return view('app.produto-detalhe.edit', compact('produto_detalhe', 'unidades'));
     }
 
     /**

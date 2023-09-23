@@ -12,8 +12,7 @@ class LoginController extends Controller
         $erro = '';
         if ($request->get('erro') == 1) $erro = 'Usuário e ou senha inválidos';
         if ($request->get('erro') == 2) $erro = 'Necessário realizar login para ter acesso a página';
-        $titulo = 'Login';
-        return view('site.login', compact('titulo', 'erro'));
+        return view('site.login', compact('erro'));
     }
 
     public function autenticar(Request $request)

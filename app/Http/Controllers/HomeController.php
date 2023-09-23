@@ -6,9 +6,8 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
-        $titulo = 'Home';
-        return view('app.home', compact('titulo'));
+        return view('app.home');
     }
 }
