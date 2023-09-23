@@ -8,7 +8,7 @@
         </div>
         <div class="menu">
             <ul>
-                <li><a href="">Novo</a></li>
+                <li><a href="{{ route('produto.create') }}">Novo</a></li>
                 <li><a href="">Consulta</a></li>
             </ul>
         </div>
@@ -23,6 +23,7 @@
                             <th>Unidade ID</th>
                             <th></th>
                             <th></th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -32,6 +33,7 @@
                                 <td>{{ $produto->descricao }}</td>
                                 <td>{{ $produto->peso }}</td>
                                 <td>{{ $produto->unidade_id }}</td>
+                                <td><a href="{{ route('produto.show', $produto->id) }}">Visualizar</a></td>
                                 <td><a href="">Excluir</a></td>
                                 <td><a href="">Editar</a></td>
                             </tr>
@@ -40,7 +42,8 @@
                 </table>
                 {{ $produtos->appends($request)->links() }}
                 <br>
-                Exibindo {{ $produtos->count() }} produtos de {{ $produtos->total() }} (de {{ $produtos->firstItem() }} a {{ $produtos->lastItem() }})
+                Exibindo {{ $produtos->count() }} produtos de {{ $produtos->total() }} (de {{ $produtos->firstItem() }} a
+                {{ $produtos->lastItem() }})
             </div>
         </div>
     </div>
