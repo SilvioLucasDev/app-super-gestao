@@ -66,7 +66,9 @@ class ProdutoController extends Controller
      */
     public function edit(Produto $produto)
     {
-        //
+        $unidades = Unidade::all();
+        $titulo = 'Produto';
+        return view('app.produto.edit', compact('titulo', 'produto', 'unidades'));
     }
 
     /**

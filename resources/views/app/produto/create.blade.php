@@ -16,14 +16,14 @@
             <div style="width: 30%; margin-left: auto; margin-right: auto;">
                 <form action="{{ route('produto.store') }}" method="post">
                     @csrf
-                    <input type="text" name="nome" value="{{ $unidade->nome ?? old('nome') }}" placeholder="Nome" class="borda-preta">
+                    <input type="text" name="nome" value="{{ old('nome') }}" placeholder="Nome" class="borda-preta">
                      {{ $errors->has('nome') ? $errors->first('nome') : '' }}
-                    <input type="text" name="descricao" value="{{ $unidade->descricao ?? old('descricao') }}" placeholder="Descrição" class="borda-preta">
+                    <input type="text" name="descricao" value="{{ old('descricao') }}" placeholder="Descrição" class="borda-preta">
                      {{ $errors->has('descricao') ? $errors->first('descricao') : '' }}
-                    <input type="text" name="peso" value="{{ $unidade->peso ?? old('peso') }}" placeholder="Peso" class="borda-preta">
+                    <input type="text" name="peso" value="{{ old('peso') }}" placeholder="Peso" class="borda-preta">
                      {{ $errors->has('peso') ? $errors->first('peso') : '' }}
                     <select name="unidade_id" class="borda-preta">
-                        <option value="{{ $unidade->unidade_id ?? old('unidade_id') }}">-- Selecione a Unidade de Medida --</option>
+                        <option>-- Selecione a Unidade de Medida --</option>
                         @foreach ($unidades as $key => $unidade)
                             <option value="{{ $unidade->id }}"  {{ old('unidade_id') == $unidade->id ? 'selected' : '' }}>{{ $unidade->descricao }}</option>
                         @endforeach
