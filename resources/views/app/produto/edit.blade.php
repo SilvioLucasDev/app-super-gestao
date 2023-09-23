@@ -19,6 +19,7 @@
                 @component('app.produto._components.form-create-edit', [
                     'produto' => $produto,
                     'unidades' => $unidades,
+                    'fornecedores' => $fornecedores,
                 ])
                 @endcomponent
             </div>
