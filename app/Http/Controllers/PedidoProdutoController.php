@@ -76,6 +76,7 @@ class PedidoProdutoController extends Controller
      */
     public function destroy(PedidoProduto $pedidoProduto)
     {
-        //
+        $pedidoProduto->delete();
+        return redirect()->route('pedido-produto.create', $pedidoProduto->pedido_id);
     }
 }
