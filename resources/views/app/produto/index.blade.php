@@ -59,8 +59,7 @@
                 </table>
                 {{ $produtos->appends($request)->links() }}
                 <br>
-                Exibindo {{ $produtos->count() }} produtos de {{ $produtos->total() }} (de {{ $produtos->firstItem() }} a
-                {{ $produtos->lastItem() }})
+                Exibindo {{ $produtos->count() }} produtos de {{ $produtos->total() }} (de {{ $produtos->firstItem() }} a {{ $produtos->lastItem() }})
             </div>
         </div>
     </div>
