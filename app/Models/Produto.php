@@ -11,11 +11,18 @@ class Produto extends Model
 
     protected $fillable = ['nome', 'descricao', 'peso', 'unidade_id', 'fornecedor_id'];
 
-    public function produtoDetalhe() {
+    public function produtoDetalhe()
+    {
         return $this->hasOne('App\Models\ProdutoDetalhe');
     }
 
-    public function fornecedor() {
+    public function fornecedor()
+    {
         return $this->belongsTo('App\Models\Fornecedor');
+    }
+
+    public function pedidos()
+    {
+        return $this->belongsToMany('App\Models\Pedido', 'pedido_produtos');
     }
 }

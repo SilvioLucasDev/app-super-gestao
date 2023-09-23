@@ -11,7 +11,8 @@ class Pedido extends Model
 
     protected $fillable = ['cliente_id'];
 
-    public function produtos() {
+    public function produtos()
+    {
         return $this->belongsToMany('App\Models\Produto', 'pedido_produtos');
     }
 }

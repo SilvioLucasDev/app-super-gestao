@@ -11,7 +11,8 @@ class ProdutoDetalhe extends Model
 
     protected $fillable = ['produto_id', 'comprimento', 'largura', 'altura', 'unidade_id'];
 
-    public function produto() {
+    public function produto()
+    {
         return $this->belongsTo('App\Models\Produto');
     }
 }
