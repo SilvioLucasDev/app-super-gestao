@@ -11,9 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('fornecedores', function (Blueprint $table) {
-            $table->string('uf', 2);
-            $table->string('email', 150);
+        Schema::create('unidades', function (Blueprint $table) {
+            $table->id();
+            $table->string('unidade', 5);
+            $table->string('descricao', 30);
+            $table->timestamps();
         });
     }
 
@@ -22,9 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('fornecedores', function (Blueprint $table) {
-            $table->dropColumn('uf');
-            $table->dropColumn('email');
-        });
+        Schema::dropIfExists('unidades');
     }
 };

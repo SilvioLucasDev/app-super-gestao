@@ -44,8 +44,7 @@ class ProdutoDetalheController extends Controller
         ];
         $request->validate($regras, $feedback);
         ProdutoDetalhe::create($request->all());
-        echo "produto cadastrado";
-        // return redirect()->route('produto.index');
+        echo "Produto Cadastrado";
     }
 
     /**
@@ -71,8 +70,7 @@ class ProdutoDetalheController extends Controller
     public function update(Request $request, ProdutoDetalhe $produto_detalhe)
     {
         $produto_detalhe->update($request->all());
-        echo "update realizado";
-        // return redirect()->route('produto-detalhe.show', $produto_detalhe->id);
+        echo "Update Realizado";
     }
 
     /**

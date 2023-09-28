@@ -27,11 +27,6 @@ return new class extends Migration
             $table->foreign('filial_id')->references('id')->on('filiais');
             $table->foreign('produto_id')->references('id')->on('produtos');
         });
-        Schema::table('produtos', function (Blueprint $table) {
-            $table->dropColumn('preco_venda');
-            $table->dropColumn('estoque_minimo');
-            $table->dropColumn('estoque_maximo');
-        });
     }
 
     /**
@@ -39,11 +34,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('produtos', function (Blueprint $table) {
-            $table->float('preco_venda', 8, 2)->default(0.01);
-            $table->integer('estoque_minimo')->default(1);
-            $table->integer('estoque_maximo')->default(1);
-        });
         Schema::dropIfExists('produto_filiais');
         Schema::dropIfExists('filiais');
     }

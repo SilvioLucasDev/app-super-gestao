@@ -46,8 +46,8 @@ Route::middleware('autenticacao')->prefix('/app')->group(function () {
     Route::get('/fornecedor/editar/{id}/{msg?}', [FornecedorController::class, 'editar'])->name('app.fornecedor.editar');
     Route::get('/fornecedor/excluir/{id}', [FornecedorController::class, 'excluir'])->name('app.fornecedor.excluir');
 
-    Route::resource('produto', ProdutoController::class);
-    Route::resource('produto-detalhe', ProdutoDetalheController::class);
+    Route::resource('/produto', ProdutoController::class);
+    Route::resource('/produto-detalhe', ProdutoDetalheController::class);
     Route::resource('/cliente', ClienteController::class);
     Route::resource('/pedido', PedidoController::class);
 

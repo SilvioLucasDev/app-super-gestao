@@ -21,7 +21,6 @@ class ProdutoFactory extends Factory
             'fornecedor_id' => fake()->numberBetween(1, 100),
             'descricao' => fake()->text(50),
             'peso' => fake()->numberBetween(0, 100),
-            'unidade_id' => fake()->numberBetween(1, 1),
         ];
     }
 }

@@ -38,7 +38,6 @@ class ProdutoController extends Controller
             'nome' => 'required|min:3|max:40',
             'descricao' => 'required|min:3|max:2000',
             'peso' => 'required|integer',
-            'unidade_id' => 'exists:unidades,id',
             'fornecedor_id' => 'exists:fornecedores,id',
         ];
         $feedback = [
@@ -46,7 +45,6 @@ class ProdutoController extends Controller
             'min' => 'O campo :attribute precisa ter no mínimo :min caracteres',
             'max' => 'O campo :attribute deve ter no máximo :max caracteres',
             'integer' => 'O campo :attribute deve ser um número inteiro',
-            'unidade_id.exists' => 'Unidade de medida inválida',
             'fornecedor_id.exists' => 'Fornecedor inválido',
         ];
         $request->validate($regras, $feedback);
@@ -81,7 +79,6 @@ class ProdutoController extends Controller
             'nome' => 'required|min:3|max:40',
             'descricao' => 'required|min:3|max:2000',
             'peso' => 'required|integer',
-            'unidade_id' => 'exists:unidades,id',
             'fornecedor_id' => 'exists:fornecedores,id',
         ];
         $feedback = [
@@ -89,7 +86,6 @@ class ProdutoController extends Controller
             'min' => 'O campo :attribute precisa ter no mínimo :min caracteres',
             'max' => 'O campo :attribute deve ter no máximo :max caracteres',
             'integer' => 'O campo :attribute deve ser um número inteiro',
-            'unidade_id.exists' => 'Unidade de medida inválida',
             'fornecedor_id.exists' => 'Fornecedor inválido',
         ];
         $request->validate($regras, $feedback);
